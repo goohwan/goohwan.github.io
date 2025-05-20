@@ -7,7 +7,7 @@
         const path = window.location.pathname;
         const oldBlogPostRegex = /^\/\d+$/; // 숫자 형태의 이전 블로그 포스팅 주소 패턴
 
-        if (path.startsWith('/goohwan.net/') && path.match(oldBlogPostRegex)) {
+        if (path.startsWith('https://goohwan.net/') && path.match(oldBlogPostRegex)) {
             window.location.replace('https://blog.goohwan.net/'); // 새 블로그 주소로 리디렉션
         } else {
             // 다른 404 처리 (예: 오류 메시지 표시)
