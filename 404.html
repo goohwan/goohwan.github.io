@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>페이지를 찾을 수 없습니다.</title>
+    <script>
+        const path = window.location.pathname;
+        const oldBlogPostRegex = /^\/\d+$/; // 숫자 형태의 이전 블로그 포스팅 주소 패턴
+
+        if (path.startsWith('/www.goohwan.net/') && path.match(oldBlogPostRegex)) {
+            window.location.replace('https://blog.goohwan.net/'); // 새 블로그 주소로 리디렉션
+        } else {
+            // 다른 404 처리 (예: 오류 메시지 표시)
+            document.write("죄송합니다. 요청하신 페이지를 찾을 수 없습니다.");
+            // 추가적인 UI 요소 (홈페이지 링크 등)를 여기에 추가할 수 있습니다.
+        }
+    </script>
+</head>
+<body>
+    <noscript>
+        죄송합니다. 페이지를 찾을 수 없습니다. JavaScript를 활성화하시면 자동으로 이동합니다.
+        <p><a href="https://goohwan.net/">홈페이지로 이동</a></p>
+        <p><a href="https://blog.goohwan.net/">새 블로그로 이동</a></p>
+    </noscript>
+</body>
+</html>
