@@ -5,10 +5,10 @@
     <title>페이지를 찾을 수 없습니다.</title>
     <script>
         const path = window.location.pathname;
-        const oldBlogPostRegex = /^\/\d+$/; // 숫자 형태의 이전 블로그 포스팅 주소 패턴
+        const oldBlogPostRegex = /^\/\d+$/; // 숫자 형태의 이전 블로그 포스팅 주소 패턴 (www 제외)
 
-        if (path.startsWith('https://goohwan.net/') && path.match(oldBlogPostRegex)) {
-            window.location.replace('https://blog.goohwan.net/'); // 새 블로그 주소로 리디렉션
+        if (oldBlogPostRegex.test(path)) {
+            window.location.replace('https://blog.goohwan.net' + path); // 새 블로그 주소로 리디렉션
         } else {
             // 다른 404 처리 (예: 오류 메시지 표시)
             document.write("죄송합니다. 요청하신 페이지를 찾을 수 없습니다.");
