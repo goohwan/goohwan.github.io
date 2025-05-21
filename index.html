@@ -18,6 +18,16 @@
       border: none; /* iframe 테두리 제거 */
     }
   </style>
+<script>
+  const iframe = document.querySelector('iframe');
+iframe.onload = () => {
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    const header = iframeDoc.querySelector('header');
+    if (header) {
+        header.style.display = 'none';
+    }
+};
+</script>
 </head>
 <body>
   <!-- Notion 페이지 공유 링크를 iframe src에 입력 -->
