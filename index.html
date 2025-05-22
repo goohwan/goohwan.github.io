@@ -9,22 +9,20 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 105%;
+      height: 100%;
       overflow: hidden;
     }
     iframe {
       width: 100%;
-      height: 105%;
+      height: 100%;
       border: none; /* iframe 테두리 제거 */
-      margin: -120px 0 120px 0;      
+      margin: 0;
     }
   </style>
-<script>
-</script>
 </head>
 <body>
   <!-- Notion 페이지 공유 링크를 iframe src에 입력 -->
-  <iframe src="https://goohwan.notion.site/ebd/5d82faf9c9d446ef89748dc79ea09c54" allowfullscreen></iframe>
+  <iframe id="myIframe" src="https://goohwan.notion.site/ebd/5d82faf9c9d446ef89748dc79ea09c54" allowfullscreen></iframe>
 
   <script>
     // iframe 요소 가져오기
@@ -43,30 +41,30 @@
             if (params.has('p')) {
               const pageValue = params.get('p');
               switch (pageValue) {
-            case '1f90351cc5ee80ff9a0ad8c1372404e9':
-              window.location.href = 'https://blog.goohwan.net/1140';
-              break;
-            case '1fa0351cc5ee80a991eefc770ffa3f82':
-              window.location.href = 'https://map.goohwan.net/largemap_kakao_v2.html';
-              break;
-            case '1fa0351cc5ee8001ac7ddc6bc75a1dba':
-              window.location.href = 'https://map.goohwan.net/largemap_google_v1.html';
-              break;
-            case '1fa0351cc5ee80c5af6ff49a43f7f0c8';
-              window.location.href = 'https://map.goohwan.net/largemap_google_v2html';
-              break;
-            case '1fa0351cc5ee8016aacae1a1f1a174bf';
-              window.location.href = 'https://blog.goohwan.net/1100';
-              break;
-            case '1fb0351cc5ee809d9b74f1741ed815cf';
-              window.location.href = 'https://map.goohwan.net/largemap_naver_v2.html';
-              break;
-            case '1fb0351cc5ee8032a830f0279ffce410';
-              window.location.href = 'https://map.goohwan.net/largemap_google_v1_ENG.html';
-              break;
-            case '1fb0351cc5ee80bdba6ad111fec42b54';
-              window.location.href = 'https://map.goohwan.net/largemap_google_v2_ENG.html';
-              break;
+                case '1f90351cc5ee80ff9a0ad8c1372404e9':
+                  window.location.href = 'https://blog.goohwan.net/1140';
+                  break;
+                case '1fa0351cc5ee80a991eefc770ffa3f82':
+                  window.location.href = 'https://map.goohwan.net/largemap_kakao_v2.html';
+                  break;
+                case '1fa0351cc5ee8001ac7ddc6bc75a1dba':
+                  window.location.href = 'https://map.goohwan.net/largemap_google_v1.html';
+                  break;
+                case '1fa0351cc5ee80c5af6ff49a43f7f0c8':
+                  window.location.href = 'https://map.goohwan.net/largemap_google_v2.html';
+                  break;
+                case '1fa0351cc5ee8016aacae1a1f1a174bf':
+                  window.location.href = 'https://blog.goohwan.net/1100';
+                  break;
+                case '1fb0351cc5ee809d9b74f1741ed815cf':
+                  window.location.href = 'https://map.goohwan.net/largemap_naver_v2.html';
+                  break;
+                case '1fb0351cc5ee8032a830f0279ffce410':
+                  window.location.href = 'https://map.goohwan.net/largemap_google_v1_ENG.html';
+                  break;
+                case '1fb0351cc5ee80bdba6ad111fec42b54':
+                  window.location.href = 'https://map.goohwan.net/largemap_google_v2_ENG.html';
+                  break;
                 default:
                   console.log('알 수 없는 page 파라미터:', pageValue);
               }
@@ -100,19 +98,19 @@
             case '1fa0351cc5ee8001ac7ddc6bc75a1dba':
               window.location.href = 'https://map.goohwan.net/largemap_google_v1.html';
               break;
-            case '1fa0351cc5ee80c5af6ff49a43f7f0c8';
-              window.location.href = 'https://map.goohwan.net/largemap_google_v2html';
+            case '1fa0351cc5ee80c5af6ff49a43f7f0c8':
+              window.location.href = 'https://map.goohwan.net/largemap_google_v2.html';
               break;
-            case '1fa0351cc5ee8016aacae1a1f1a174bf';
+            case '1fa0351cc5ee8016aacae1a1f1a174bf':
               window.location.href = 'https://blog.goohwan.net/1100';
               break;
-            case '1fb0351cc5ee809d9b74f1741ed815cf';
+            case '1fb0351cc5ee809d9b74f1741ed815cf':
               window.location.href = 'https://map.goohwan.net/largemap_naver_v2.html';
               break;
-            case '1fb0351cc5ee8032a830f0279ffce410';
+            case '1fb0351cc5ee8032a830f0279ffce410':
               window.location.href = 'https://map.goohwan.net/largemap_google_v1_ENG.html';
               break;
-            case '1fb0351cc5ee80bdba6ad111fec42b54';
+            case '1fb0351cc5ee80bdba6ad111fec42b54':
               window.location.href = 'https://map.goohwan.net/largemap_google_v2_ENG.html';
               break;
             default:
