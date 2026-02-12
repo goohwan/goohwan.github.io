@@ -1,144 +1,132 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="naver-site-verification" content="ccd4d716b7ce479c10d8aae345824fe3d5abcd28" />
+  <meta name="description" content="Goohwan.net - 다양한 웹 서비스와 블로그를 만나보세요.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
   <title>goohwan.net</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
-    /* 전체 화면을 채우도록 스타일링 */
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-    iframe {
-      width: 100%;
-      height: 113%;
-      border: none; /* iframe 테두리 제거 */
-      margin: -120px 0 0 0;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6BG0L04P6N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-6BG0L04P6N');
-</script>
-</head>
-<body>
-  <!-- Notion 페이지 공유 링크를 iframe src에 입력 -->
-  <iframe id="myIframe" src="https://goohwan.notion.site/ebd/5d82faf9c9d446ef89748dc79ea09c54" allowfullscreen></iframe>
-
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BG0L04P6N"></script>
   <script>
-    // iframe 요소 가져오기
-    const iframe = document.getElementById('myIframe');
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    // iframe의 src 속성 변화를 감지하는 MutationObserver 설정
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.attributeName === 'src') {
-          const iframeURL = iframe.getAttribute('src');
-          try {
-            const url = new URL(iframeURL);
-            const params = new URLSearchParams(url.search);
-
-            // 쿼리 파라미터에 따라 리다이렉션 처리
-            if (params.has('p')) {
-              const pageValue = params.get('p');
-              switch (pageValue) {
-                case '1f90351cc5ee80ff9a0ad8c1372404e9':
-                  window.location.href = 'https://blog.goohwan.net/1140';
-                  break;
-                case '1fa0351cc5ee80a991eefc770ffa3f82':
-                  window.location.href = 'https://map.goohwan.net/largemap_kakao_v2.html';
-                  break;
-                case '1fa0351cc5ee8001ac7ddc6bc75a1dba':
-                  window.location.href = 'https://map.goohwan.net/largemap_google_v1.html';
-                  break;
-                case '1fa0351cc5ee80c5af6ff49a43f7f0c8':
-                  window.location.href = 'https://map.goohwan.net/largemap_google_v2.html';
-                  break;
-                case '1fa0351cc5ee8016aacae1a1f1a174bf':
-                  window.location.href = 'https://blog.goohwan.net/1100';
-                  break;
-                case '1fb0351cc5ee809d9b74f1741ed815cf':
-                  window.location.href = 'https://map.goohwan.net/largemap_naver_v2.html';
-                  break;
-                case '1fb0351cc5ee8032a830f0279ffce410':
-                  window.location.href = 'https://map.goohwan.net/largemap_google_v1_ENG.html';
-                  break;
-                case '1fb0351cc5ee80bdba6ad111fec42b54':
-                  window.location.href = 'https://map.goohwan.net/largemap_google_v2_ENG.html';
-                  break;
-                default:
-                  console.log('알 수 없는 page 파라미터:', pageValue);
-              }
-            }
-          } catch (e) {
-            console.error('URL 파싱 오류:', e);
-          }
-        }
-      });
-    });
-
-    // iframe 요소의 속성 변화를 감지
-    observer.observe(iframe, { attributes: true, attributeFilter: ['src'] });
-
-    // 초기 src 속성 확인
-    function checkIframeSrc() {
-      const iframeURL = iframe.getAttribute('src');
-      try {
-        const url = new URL(iframeURL);
-        const params = new URLSearchParams(url.search);
-
-        if (params.has('p')) {
-          const pageValue = params.get('p');
-          switch (pageValue) {
-            case '1f90351cc5ee80ff9a0ad8c1372404e9':
-              window.location.href = 'https://blog.goohwan.net/1140';
-              break;
-            case '1fa0351cc5ee80a991eefc770ffa3f82':
-              window.location.href = 'https://map.goohwan.net/largemap_kakao_v2.html';
-              break;
-            case '1fa0351cc5ee8001ac7ddc6bc75a1dba':
-              window.location.href = 'https://map.goohwan.net/largemap_google_v1.html';
-              break;
-            case '1fa0351cc5ee80c5af6ff49a43f7f0c8':
-              window.location.href = 'https://map.goohwan.net/largemap_google_v2.html';
-              break;
-            case '1fa0351cc5ee8016aacae1a1f1a174bf':
-              window.location.href = 'https://blog.goohwan.net/1100';
-              break;
-            case '1fb0351cc5ee809d9b74f1741ed815cf':
-              window.location.href = 'https://map.goohwan.net/largemap_naver_v2.html';
-              break;
-            case '1fb0351cc5ee8032a830f0279ffce410':
-              window.location.href = 'https://map.goohwan.net/largemap_google_v1_ENG.html';
-              break;
-            case '1fb0351cc5ee80bdba6ad111fec42b54':
-              window.location.href = 'https://map.goohwan.net/largemap_google_v2_ENG.html';
-              break;
-            default:
-              console.log('알 수 없는 page 파라미터:', pageValue);
-          }
-        }
-      } catch (e) {
-        console.error('URL 파싱 오류:', e);
-      }
-    }
-
-    // iframe 로드 완료 시 초기 src 확인
-    iframe.addEventListener('load', checkIframeSrc);
-
-    // 주기적으로 src 확인 (Notion 페이지가 History API로 URL을 변경할 경우 대비)
-    setInterval(checkIframeSrc, 1000);
+    gtag('config', 'G-6BG0L04P6N');
   </script>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="favicon.svg" alt="Goohwan Logo" class="logo">
+    </div>
+    <h1>goohwan.net</h1>
+    <p class="subtitle">나의 작은 저장소, 그리고 서비스들</p>
+  </header>
+
+  <main>
+    <div class="grid">
+      <!-- Sites -->
+      <a href="https://log.goohwan.net/" class="card" target="_blank">
+        <div class="card-header">
+          <span class="card-icon">📝</span>
+          <span class="card-title">goohwan.blog</span>
+        </div>
+        <div class="card-desc">Welcome to goohwan-blog! 개발 이야기와 일상 기록.</div>
+        <div class="tag">Blog</div>
+      </a>
+
+      <!-- Large Map -->
+      <a href="https://map.goohwan.net/" class="card" target="_blank">
+        <div class="card-header">
+          <span class="card-icon">🗺️</span>
+          <span class="card-title">LargeMap Service</span>
+        </div>
+        <div class="card-desc">네이버, 카카오, 구글 지도를 활용한 대형 지도 서비스. (개편 중)</div>
+        <div class="tag">Map</div>
+      </a>
+
+      <!-- Audio Services -->
+      <a href="https://audiobook.goohwan.net/" class="card" target="_blank">
+        <div class="card-header">
+          <span class="card-icon">🎧</span>
+          <span class="card-title">책 읽어주는 가을이</span>
+        </div>
+        <div class="card-desc">텍스트를 오디오북으로 변환해주는 서비스.</div>
+        <div class="tag">Audio</div>
+      </a>
+
+      <a href="https://tts.goohwan.net/" class="card" target="_blank">
+        <div class="card-header">
+          <span class="card-icon">🔊</span>
+          <span class="card-title">TTS 안내방송</span>
+        </div>
+        <div class="card-desc">다양한 안내 방송을 위한 TTS 생성 서비스.</div>
+        <div class="tag">Audio</div>
+      </a>
+
+      <!-- Image Services -->
+      <a href="https://authpixel.goohwan.net/" class="card" target="_blank">
+        <div class="card-header">
+          <span class="card-icon">🖼️</span>
+          <span class="card-title">AuthPixel</span>
+        </div>
+        <div class="card-desc">AI 기반 이미지 보안 솔루션.</div>
+        <div class="tag">Security</div>
+      </a>
+
+      <a href="https://idmask.goohwan.net/" class="card" target="_blank">
+        <div class="card-header">
+          <span class="card-icon">🎭</span>
+          <span class="card-title">id-masking</span>
+        </div>
+        <div class="card-desc">개인정보 마스킹 및 보호 도구.</div>
+        <div class="tag">Security</div>
+      </a>
+
+      <!-- Apps -->
+      <a href="https://learning-jocoding.goohwan.net/lotto" class="card" target="_blank">
+        <div class="card-header">
+          <span class="card-icon">🎱</span>
+          <span class="card-title">Lotto Generator</span>
+        </div>
+        <div class="card-desc">로또 번호 생성기. 이번 주의 행운을 시험해보세요.</div>
+        <div class="tag">App</div>
+      </a>
+
+      <a href="https://learning-jocoding.goohwan.net/food" class="card" target="_blank">
+        <div class="card-header">
+          <span class="card-icon">🍔</span>
+          <span class="card-title">오늘 뭐 먹지?</span>
+        </div>
+        <div class="card-desc">결정 장애를 위한 점심 메뉴 추천 앱.</div>
+        <div class="tag">App</div>
+      </a>
+
+      <!-- Old Blog -->
+      <a href="https://blog.goohwan.net/" class="card" target="_blank">
+        <div class="card-header">
+          <span class="card-icon">👴</span>
+          <span class="card-title">Old Blog</span>
+        </div>
+        <div class="card-desc">점아저씨의 까칠한 하루 - 예전 글 보관소.</div>
+        <div class="tag">Archive</div>
+      </a>
+    </div>
+  </main>
+
+  <footer style="text-align: center; padding: 2rem; color: #64748b; font-size: 0.8rem;">
+    &copy; 2026 goohwan.net. All rights reserved.
+  </footer>
+
 </body>
+
 </html>
